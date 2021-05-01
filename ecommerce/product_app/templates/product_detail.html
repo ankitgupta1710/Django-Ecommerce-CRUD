@@ -1,0 +1,14 @@
+<h1>Products</h1>
+<p>
+    Code  : {{ object.code }}<br>
+    Name  : {{ object.name }}<br>
+    Description : {{ object.description}}<br>
+    Price : {{ object.price}}<br>
+    photo :<br> <img src="{{ object.photo.url }}" class="img-responsive" style="width: 40%;  margin-right: 10px" /> <br><br>
+    manufacturer  :{{ object.manufacturer }}<br>
+    offers  : {{ object.offers }}<br>
+    availablity  : {{ object.availablity }}<br>
+    category  : {{ object.category }}<br>
+</p>
+<br>
+<a href="{% url 'product_list' %}">Home</a>

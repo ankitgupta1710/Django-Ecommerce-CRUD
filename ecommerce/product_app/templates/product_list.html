@@ -1,0 +1,16 @@
+<a href="{% url 'product_create' %}">New Product</a>
+<div class='main'>
+    <br/>
+    {% for object in object_list %}
+        ID: {{ object.id }}<br/>
+        CODE: {{ object.code }}<br/>
+        NAME: {{ object.name }}<br/>
+        DESCRIPTION: {{object.description}}<br>
+        <a href="{% url 'product_detail' object.id %}">Detail</a>
+        <a href="{% url 'product_update' object.id %}">Edit</a>
+        <a href="{% url 'product_delete' object.id %}">Delete</a>
+        <hr/>
+        {% empty %}
+        <p>No Object yet</p>        
+    {% endfor %}    
+</div>
