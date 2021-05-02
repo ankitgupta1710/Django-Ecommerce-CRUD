@@ -1,12 +1,23 @@
-<a href="{% url 'product_create' %}">New Product</a>
-<div class='main'>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <div class="a"><h1 class="custom">PRODUCT PAGE</h1></div>
+  
+<body class="custom">  
+<a class="btn btn-primary custom" href="{% url 'product_create' %}">New Product</a>
+<div class='listdiv'>
     <br/>
     {% for object in object_list %}
-        #{{ object.id }}<br/>
-        {{ object.code }}<br/>
-        {{ object.name }}<br/>
-        {{ object.email }}<br/>
-        {{ object.phone }}<br/>
+    <img src="{{ object.photo.url }}" class="img-responsive"
+    style="float:left; border: 1px solid black; ;width: 230px; height: 190px;  margin-right: 10px;" />
+        ID: {{ object.id }}<br/>
+        CODE: {{ object.code }}<br/>
+        NAME: {{ object.name }}<br/>
+        DESCRIPTION: {{object.description}}<br>
         <a href="{% url 'product_detail' object.id %}">Detail</a>
         <a href="{% url 'product_update' object.id %}">Edit</a>
         <a href="{% url 'product_delete' object.id %}">Delete</a>
@@ -15,3 +26,5 @@
         <p>No Object yet</p>        
     {% endfor %}    
 </div>
+
+</body>

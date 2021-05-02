@@ -1,6 +1,21 @@
-<h1>Information</h1>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+
+<body class="custom">
+    <center>
+        <br><br>
+    <h1>Information</h1>
+    <br>
 <form method="POST">
     {% csrf_token %}
-    Are you sure you want to delete "{{ object }}"?
-    <input type="submit" value="Delete">
+    <h3>Are you sure you want to delete "{{ object }}"?</h3>
+    <br>
+    <input type="submit" class="btn btn-primary custom" value="Delete">
 </form>
+</center>
+</body>
